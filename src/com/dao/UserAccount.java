@@ -11,12 +11,14 @@ public class UserAccount implements com.interfaces.IUserService
 	{
 		boolean matchFound = false;
 		ArrayList<com.bean.User> userList = new ArrayList<com.bean.User>();
+		System.out.println("Attempted login: User: " + findUser.getName() + " Pass: " + findUser.getPassword());
 		
 		//Populate list using test values
 		PopulateUserList(userList);
-		
+		System.out.println("ArrayList contents: " + userList.size());
 		for(com.bean.User x : userList) 
 		{
+			System.out.println(x.toString());
 			if(x.getName().equals(findUser.getName()) && x.getPassword().equals(findUser.getPassword())) 
 			{
 				matchFound = true;
